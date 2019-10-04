@@ -1,0 +1,45 @@
+﻿@using Core_MVC.Model.ViewModels
+@using Core_MVC.Model
+@model StudentInputViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <h1>创建</h1>
+    <form method="post" asp-action="Create">
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div>
+            <label asp-for="Birthday"></label>
+            <input asp-for="Birthday" type="date" />
+            <span asp-validation-for="Birthday"></span>
+        </div>
+        <div>
+            <label asp-for="Gender"></label>
+            <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()"></select>
+            <span asp-validation-for="Gender"></span>
+        </div>
+        <div asp-validation-summary="All">
+        </div>
+        <div>
+            <button type="submit" name="save">保存</button>
+        </div>
+    </form>
+</body>
+</html>

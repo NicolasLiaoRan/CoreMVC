@@ -1,0 +1,23 @@
+﻿@model Core_MVC.Model.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div>
+        <h1>信息</h1>
+        <div>ID：@Model.Id</div>
+        <div>姓名：@Model.FirstName @Model.LastName</div>
+        <div>性别：@Model.Gender</div>
+        <div>出生日期：@Model.Birthday.ToString("yyyy-MM-dd")</div>
+    </div>
+    <a asp-action="Index">返回</a>
+</body>
+</html>

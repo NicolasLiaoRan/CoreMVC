@@ -1,0 +1,26 @@
+﻿@model Core_MVC.Model.ViewModels.StudentViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <ul>
+        @foreach(var s in Model.Students)
+        {
+        <li>Name：@s.Name (Age：@s.Age) 
+        <a asp-action="Detail" asp-route-id="@s.Id">明细 TagHelper</a>
+        </li>
+        }
+    </ul>
+    <div>
+        <a asp-action="Create">添加</a>
+    </div>
+</body>
+</html>
