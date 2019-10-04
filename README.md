@@ -4,6 +4,7 @@
 不定时更新，核心要点EFCore+IoC+Core MVC（基于Core SDK2.2），使用本机SQL Server数据库，windows验证模式
 
 参考文档
+
 文档：1、项目结构及配置.note
 链接：http://note.youdao.com/noteshare?id=1aa5bad838e823ca67ecbd3ae7c40e36&sub=4F3218260583488ABC72798F10D6695E  
 
