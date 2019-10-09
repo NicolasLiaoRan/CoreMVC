@@ -35,3 +35,5 @@
 文档：10、EntityFrameworkCore.note
 链接：http://note.youdao.com/noteshare?id=5ec71a92190debc122e0acd317c76c99&sub=2A878E62E79A40FF8F64D2DC7D3CBCC7
 
+文档：11、View.note
+链接：http://note.youdao.com/noteshare?id=305487365be8c4025c9d95e995d4b207&sub=D14BFE620BA5456E95FCFD8F170F92E1
