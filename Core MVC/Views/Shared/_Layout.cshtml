@@ -4,17 +4,34 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <environment include="Development">
+        <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"
+              asp-fallback-href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap-grid.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute" />
+    </environment>
+
 </head>
 <body>
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+    </nav>
     <h1>
         布局页
     </h1>
     <div>
         @RenderBody()
     </div>
-    <hr />
     <div>
-        @RenderSection("Footer",required:false)
+        @RenderSection("Footer", required: false)
     </div>
+    <environment include="Development">
+        <script src="~/node_modules/jquery/dist/jquery.js"></script>
+        <script src="~/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+    </environment>
+
 </body>
 </html>

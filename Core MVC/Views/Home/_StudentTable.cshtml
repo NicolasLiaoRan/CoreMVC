@@ -1,0 +1,21 @@
+﻿@model StudentViewModel
+@{
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Age</td>
+                    <td> <a asp-action="Detail" asp-route-id="@item.Id">明细 TagHelper</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

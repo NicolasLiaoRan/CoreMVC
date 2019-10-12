@@ -10,13 +10,15 @@
 </head>
 <body>
     <ul>
-        @foreach (var s in Model.Students)
+        @*@Html.Partial("_StudentTable",Model)*@
+        <partial name="_StudentTable" for="@Model" />
+        @*@foreach (var s in Model.Students)
         {
             <li>
                 Name：@s.Name (Age：@s.Age)
                 <a asp-action="Detail" asp-route-id="@s.Id">明细 TagHelper</a>
             </li>
-        }
+        }*@
     </ul>
     @section Footer
         {
@@ -24,6 +26,7 @@
             <a asp-action="Create">添加</a>
         </div>
     }
-
+    @await Component.InvokeAsync("Welcome")
+    <vc:welcome></vc:welcome>
 </body>
 </html>

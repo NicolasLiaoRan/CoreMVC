@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Core_MVC.Data;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 
 namespace Core_MVC
 {
@@ -49,6 +51,13 @@ namespace Core_MVC
                 app.UseExceptionHandler();
             }
             app.UseStaticFiles();
+            //伺服node_modules文件夹以使用前端库
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                RequestPath = "/node_modules",
+                FileProvider=new PhysicalFileProvider(Path.Combine(env.ContentRootPath,"node_modules"))
+            });
+            //app.UseStaticFiles("/node_modules");
             app.UseMvc(builder =>
             {
                 builder.MapRoute("Default", "{Controller=Home}/{action=Index}/{id?}");
