@@ -37,3 +37,6 @@
 
 文档：11、View.note
 链接：http://note.youdao.com/noteshare?id=305487365be8c4025c9d95e995d4b207&sub=D14BFE620BA5456E95FCFD8F170F92E1
+
+文档：12、使用前端库.note
+链接：http://note.youdao.com/noteshare?id=7c730091384f3fa0a650d37377a06a77&sub=CA0F581D51A9416497C6CE999D32F32B
