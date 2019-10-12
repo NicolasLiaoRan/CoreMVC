@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+
+@inject SignInManager<IdentityUser> signInManager
 
 <html>
 <head>
@@ -17,6 +20,29 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
+
+        @if (signInManager.IsSignedIn(User))
+        {
+            //登录则显示登出按钮
+            <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="javascript:document.getElementById('logoutForm').submit()">登出</a>
+                    </li>
+                </ul>
+            </form>
+        }
+        else
+        { <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a asp-controller="Account" asp-action="Register">注册</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Account" asp-action="Login">登录</a>
+                </li>
+
+            </ul>
+        }
     </nav>
     <h1>
         布局页
