@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Core_MVC.Model;
 using Core_MVC.Model.ViewModels;
 using Core_MVC.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -43,11 +44,13 @@ namespace Core_MVC.Controllers
         }
         //GET添加
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
         //POST添加
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(StudentInputViewModel student)

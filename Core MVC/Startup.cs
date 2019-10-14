@@ -36,7 +36,7 @@ namespace Core_MVC
             //services.AddSingleton<IRepository<Student>, InMemoryRepository>();
             services.AddScoped<IRepository<Student>, EFCoreRepository>();
 
-            //把Identity配置成服务
+            //配置Identity数据存储服务
             services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("SqlServerConnection"), b => b.MigrationsAssembly("Core MVC")));
             //注册Identity服务
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<IdentityDbContext>();
